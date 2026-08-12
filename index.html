@@ -504,10 +504,19 @@ footer{
 </footer>
 
 </body>
-    <body>
-        <audio autoplay loop>
-    <source src="vidssave.com Fairygarden - Little Fairy 256KBPS.mp3" type="audio/mpeg">
-</audio>
-    </body>
+   <body>
+
+    <!-- tumhara baaki HTML code -->
+
+    <audio id="song" loop>
+        <source src="vidssave.com Fairygarden - Little Fairy 256KBPS.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener("click", function () {
+            document.getElementById("song").play();
+        }, { once: true });
+    </script>
+
+</body>
 </html>
-```
