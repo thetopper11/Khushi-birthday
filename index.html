@@ -1,3 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Khushi Jii 🌷</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fdf6f7;
+    color:#49343b;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        rgba(255,247,249,.72),
+        rgba(255,247,249,.88)
+    ),
+    url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+    background-position:center;
+}
+
+/* soft glow */
+
+.glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#f8b9cc;
+    filter:blur(130px);
+    opacity:.35;
+    border-radius:50%;
+}
+
+.glow1{
+    top:-200px;
+    left:-180px;
+}
+
+.glow2{
+    bottom:-250px;
+    right:-150px;
+}
+
+/* ================= CONTENT ================= */
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    padding:30px;
+}
+
+.mini{
+    letter-spacing:6px;
+    font-size:12px;
+    text-transform:uppercase;
+    color:#9b6b79;
+    margin-bottom:25px;
+    animation:fadeUp 1.5s ease;
+}
+
+.title{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(45px,8vw,90px);
+    font-weight:400;
+    color:#593842;
+    line-height:1;
+    animation:fadeUp 1.3s ease;
+}
+
+.name{
+    font-family:'Parisienne',cursive;
+    font-size:clamp(80px,15vw,160px);
+    color:#b35b76;
+    line-height:1.1;
+    margin:5px 0 15px;
+    text-shadow:0 8px 30px rgba(130,50,80,.15);
+    animation:nameIn 1.8s ease;
+}
+
+.line{
+    width:70px;
+    height:1px;
+    background:#b87588;
+    margin:25px auto;
+}
+
+.subtitle{
+    font-size:14px;
+    letter-spacing:2px;
+    color:#765963;
+}
+
+/* ================= CAKE ================= */
+
+.cake{
+    width:210px;
+    height:210px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-top:35px;
+
+    border:6px solid rgba(255,255,255,.85);
+
+    box-shadow:
+    0 20px 60px rgba(100,50,70,.18);
+
+    animation:floatCake 4s ease-in-out infinite;
+}
+
+/* ================= TULIPS ================= */
+
+.tulip{
+    position:absolute;
+    width:180px;
+    height:240px;
+    object-fit:cover;
+    border-radius:100px 100px 20px 20px;
+
+    box-shadow:0 20px 50px rgba(80,30,50,.15);
+
+    opacity:.85;
+}
+
+.tulip-left{
+    left:-45px;
+    bottom:-20px;
+    transform:rotate(-8deg);
+}
+
+.tulip-right{
+    right:-45px;
+    top:-20px;
+    transform:rotate(8deg);
+}
+
+/* ================= FLOATING PETALS ================= */
+
+.petal{
+    position:absolute;
+    font-size:18px;
+    opacity:.55;
+    animation:petalFall linear infinite;
+}
+
+.p1{left:10%;animation-duration:8s;}
+.p2{left:25%;animation-duration:10s;animation-delay:2s;}
+.p3{left:45%;animation-duration:7s;animation-delay:1s;}
+.p4{left:65%;animation-duration:11s;animation-delay:3s;}
+.p5{left:82%;animation-duration:8s;animation-delay:1s;}
+
+/* ================= MESSAGE ================= */
+
+.message-section{
+    padding:110px 20px;
+    background:#fffafb;
+}
+
+.card{
+    max-width:780px;
+    margin:auto;
+    padding:65px 55px;
+
+    background:rgba(255,255,255,.75);
+
+    border:1px solid rgba(190,120,140,.25);
+
+    border-radius:35px;
+
+    box-shadow:
+    0 30px 80px rgba(100,50,70,.08);
+
+    text-align:center;
+}
+
+.card-small{
+    font-size:11px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#a47784;
+}
+
+.card h2{
+    font-family:'DM Serif Display',serif;
+    font-size:45px;
+    font-weight:400;
+    color:#5c3b45;
+    margin:18px 0 30px;
+}
+
+.card p{
+    font-size:16px;
+    line-height:2;
+    color:#705761;
+    margin:18px 0;
+}
+
+.highlight{
+    font-family:'Parisienne',cursive;
+    font-size:48px;
+    color:#b35b76;
+    margin:30px 0;
+}
+
+.signature{
+    margin-top:40px;
+    color:#9b6b79;
+    font-size:12px;
+    letter-spacing:3px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:35px;
+    background:#f8edef;
+    color:#87636e;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes nameIn{
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes floatCake{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes petalFall{
+    from{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.6;
+    }
+
+    to{
+        transform:translateY(105vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .tulip{
+        width:110px;
+        height:160px;
+    }
+
+    .tulip-left{
+        left:-35px;
+    }
+
+    .tulip-right{
+        right:-35px;
+    }
+
+    .hero-content{
+        padding:20px;
+    }
+
+    .mini{
+        letter-spacing:3px;
+    }
+
+    .subtitle{
+        font-size:11px;
+        line-height:1.8;
+    }
+
+    .cake{
+        width:170px;
+        height:170px;
+    }
+
+    .card{
+        padding:45px 22px;
+    }
+
+    .card h2{
+        font-size:35px;
+    }
+
+    .card p{
+        font-size:14px;
+        line-height:1.9;
+    }
+
+    .highlight{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= BIRTHDAY OPENING ================= -->
+
+<section class="hero">
+
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
+
+    <!-- Real Tulips -->
+
+    <img
+    class="tulip tulip-left"
+    src="https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=600&q=90"
+    alt="Tulips">
+
+    <img
+    class="tulip tulip-right"
+    src="https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=600&q=90"
+    alt="Tulips">
+
+
+    <!-- Falling petals -->
+
+    <div class="petal p1">🌸</div>
+    <div class="petal p2">🌷</div>
+    <div class="petal p3">✿</div>
+    <div class="petal p4">🌸</div>
+    <div class="petal p5">🌷</div>
+
+
+    <div class="hero-content">
+
+        <div class="mini">
+            A Little Celebration For You
+        </div>
+
+        <div class="title">
+            Happy Birthday
+        </div>
+
+        <div class="name">
+            Khushi Ji
+        </div>
+
+        <div class="line"></div>
+
+        <div class="subtitle">
+            MAY YOUR DAY BE AS BEAUTIFUL AS YOUR SMILE
+        </div>
+
+
+        <!-- princess pic  -->
+
+        <img
+        class="cake"
+        src="IMG-20250814-WA0003.jpg"
+        alt="khushi">
+
+    </div>
+
+</section>
+
+
+<!-- ================= BIRTHDAY MESSAGE ================= -->
+
+<section class="message-section">
+
+    <div class="card">
+
+        <div class="card-small">
+            A Birthday Note
+        </div>
+
+        <h2>
+            Dear Khushi Ji
+        </h2>
+
+        <p>
+            Today isn't just another day.
+            It's a reminder that someone truly special
+            came into this world and made it a little
+            more beautiful. 🌷
+        </p>
+
+        <div class="highlight">
+            Happy Birthday
+        </div>
+
+        <p>
+            May this new chapter of your life bring you
+            countless reasons to smile, beautiful memories
+            to keep forever, and dreams that slowly turn
+            into reality.
+        </p>
+
+        <p>
+            I hope every morning brings you peace,
+            every evening brings you happiness,
+            and every little moment gives you another
+            reason to be grateful.
+        </p>
+
+        <p>
+            May you always have the courage to follow
+            your dreams, the strength to overcome every
+            difficult moment, and the people around you
+            who genuinely make your life brighter.
+        </p>
+
+        <p>
+            Keep smiling, keep shining, and never forget
+            how wonderfully unique you are.
+            You deserve beautiful things, beautiful days,
+            and a life full of beautiful memories. 🤍
+        </p>
+
+        <p>
+            So today, forget all the worries for a while,
+            enjoy your special day, eat some cake,
+            smile a little more and make memories
+            that you'll remember for years. 🎂
+        </p>
+
+        <div class="highlight">
+            Khushi Ji 🌷
+        </div>
+
+        <p>
+            Wishing you a very beautiful,
+            peaceful, successful and
+            incredibly happy birthday.
+        </p>
+
+        <div class="signature">
+            WITH LOTS OF GOOD WISHES ✨
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    Made with ♡ for Khushi Ji
+</footer>
+
+</body>
+</html>
+
+
+Haan yrr ❤️ ab exactly tumhare isi aesthetic design ko book-style horizontal sliding mein convert kar diya hai.
+
+Isme:
+
+📖 Left/right slide hoga, vertical scroll nahi.
+🪄 Page 3D book-turn jaisa lagega.
+🌷 First page ke peeche back cover rahega.
+📄 Message alag-alag pages mein aayega.
+🔚 Last page ke baad back cover hoga.
+📱 Mobile par swipe left/right bhi chalega.
+✨ Tumhara existing pink aesthetic, flowers, fonts aur animation maintain rahega.
+
+Apna pura index.html is code se replace kar do:
 
 <!DOCTYPE html>
 <html lang="en">
@@ -1080,4 +1601,3 @@ function handleSwipe(){
 
 </body>
 </html>
-```
